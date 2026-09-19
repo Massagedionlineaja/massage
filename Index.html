@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FBF8F2">
+  <meta name="description" content="Reservasi homecare massage di Jabodetabek. Pilih layanan, jadwal, dan therapist sesuai area Anda. Konfirmasi melalui WhatsApp admin Massage di Onlineaja.">
+  <title>Massage di Onlineaja</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <?!= include_('Styles'); ?>
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke konten</a>
+  <div id="preview-banner" hidden></div>
+  <header class="site-header">
+    <a class="brand" href="#customer" aria-label="Massage di Onlineaja, beranda">
+      <span class="brand-mark" aria-hidden="true">m<span>o</span></span>
+      <span><strong>Massage</strong><small>di Onlineaja</small></span>
+    </a>
+    <nav class="mode-switch" aria-label="Pilihan tampilan">
+      <button type="button" data-action="mode" data-value="customer" class="active" aria-pressed="true">Untuk customer</button>
+      <button type="button" data-action="mode" data-value="therapist" aria-pressed="false">Untuk therapist</button>
+    </nav>
+    <div class="header-actions" id="account-actions"><button class="btn btn-outline btn-small" data-action="login">Masuk <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <noscript><style>#boot-status{display:none!important}</style><div class="notice">Halaman reservasi memerlukan JavaScript. Buka URL website melalui Safari atau Chrome dengan JavaScript aktif.</div></noscript>
+    <div id="boot-status" class="loading-surface" role="status"><span class="spinner"></span> Menyiapkan ruang nyaman Anda…</div>
+    <div id="app" hidden></div>
+  </main>
+  <footer class="site-footer"><span>Massage di Onlineaja</span><div><button class="text-button" data-action="privacy">Privasi & ketentuan</button><button class="text-button" data-action="contact">Hubungi admin</button></div><span class="footer-note">Jabodetabek · Jadwal dalam WIB</span></footer>
+  <template id="care-artwork"><?!= include_('Artwork'); ?></template>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <?!= include_('App'); ?>
+</body>
+</html>
